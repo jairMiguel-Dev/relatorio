@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Devoluções de Materiais</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Controle de Devoluções de Materiais</h1>
+    </header>
+    <main>
+        <section id="formulario">
+            <h2>Registrar Devolução</h2>
+            <form id="devolucaoForm">
+                <input type="text" id="material" placeholder="Nome do Material" required>
+                <input type="number" id="quantidade" placeholder="Quantidade" required>
+                <input type="text" id="conferente" placeholder="Nome do Conferente" required>
+                <input type="text" id="motivo" placeholder="Motivo da Devolução" required>
+                <input type="number" id="NRomaneio" placeholder="N° do Romaneio" required>
+                <input type="date" id="data" required>
+                <input type="file" id="foto" accept="image/*" multiple>
+                <button type="submit">Adicionar Devolução</button>
+            </form>
+        </section>
+        <section id="tabela">
+            <h2>Devoluções Registradas</h2>
+            <table id="tabelaDevolucoes">
+                <thead>
+                    <tr>
+                        <th>Material</th>
+                        <th>Quantidade</th>
+                        <th>Conferente</th>
+                        <th>Motivo</th>
+                        <th>Data</th>
+                        <th>Fotos</th>
+                        <th>N° Romaneio</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <button id="gerarPdf">Gerar PDF</button>
+            <button id="exportarExcel">Exportar para Excel</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
